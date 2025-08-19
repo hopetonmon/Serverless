@@ -13,7 +13,7 @@ terraform {
   cloud {
     organization = "Foundationmon"
     workspaces {
-      name = "Virtual_Machinez"
+      name = "Serverless"
     }
   }
 }
