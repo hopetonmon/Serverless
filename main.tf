@@ -56,3 +56,26 @@ provider "aws" {
     secret_key = var.HOPETONMON_COPY_SECRET_KEY
   
 }
+
+#-------------------S3 BUCKET--------------------------
+resource "aws_s3_bucket" "flappy-bucket" {
+  bucket = "flappy-bucket-${var.AWS_REGION}-${var.AVAILABILITY_ZONE}"
+
+tags = {
+  Name        = "Flappy Bucket"
+  Environment = "Server"
+}
+}
+
+#--------------------S3 BUCKET WEBSITE CONFIG--------------------------
+resource "aws_s3_bucket_website_configuration" "flappy_site" {
+  bucket = aws_s3_bucket.flappy-bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+}
