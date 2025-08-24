@@ -57,6 +57,7 @@ provider "aws" {
   
 }
 
+
 #-------------------S3 BUCKET--------------------------
 resource "aws_s3_bucket" "flappy-bucket" {
   bucket = "flappy-bucket-${var.AWS_REGION}-${var.AVAILABILITY_ZONE}"
