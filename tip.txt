@@ -1,0 +1,5 @@
+Tip: when uploading to the bucket in AWS. make sure core files like index.html is in the root to reference the correct files!!!!
+Tip2: Upload the game like in the repo. Creating a folder for the files creates a "Middle Man" that wont match the referece in the index.html file.
+Tip3: having a index.html file is essential for it is what AWS defaults to to load your static website.
+Tip4: going to permissions and unchecking the blocks will allow access for allow
+Tip5: AWS S3 static website hosting defaults to HTTP not HTTPS so keep this in mind when thinking about security
